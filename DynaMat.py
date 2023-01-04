@@ -269,9 +269,15 @@ class DynaMatInvStacked(_DynaMatInv_Parent):
         reset_every : int, optional
             Inverse matrices are classically computed and updated after this
             number of columns or rows changes. The default is 24.
-        """
-        # #TODO : document methods
         
+        Methods
+        -------
+            set_cols(V, i) : Set the vectors V as the new columns at index i for each matrix.
+            set_rows(V, i) : Set the vectors V as the new row at index i for each matrix..
+            set_diag_elmts(v, i) : Set the i-th diagonal values for each matrix to v values.
+            get_mat() : Get the current matrices.
+            get_inv() : Get the current inverted matrices.
+        """
         assert A.ndim == 3
         assert A.shape[1] == A.shape[2]
         super().__init__(A, check_every)
